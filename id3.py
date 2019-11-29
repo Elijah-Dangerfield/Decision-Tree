@@ -1,5 +1,7 @@
 import copy
 import numpy as np
+import pandas as pd
+import sys
 
 
 class Node():
@@ -31,6 +33,7 @@ class Node():
     def copy(self):
         s = copy.deepcopy(self)
         return s
+
 
 def entropy(target_col):
     elements,counts = np.unique(target_col,return_counts = True)
@@ -86,6 +89,7 @@ def info_gain_split(data, split_value, split_feature, target_feature):
     weighted_entropy = entropy_above + entropy_below
     return total_entropy - weighted_entropy
 
+
 def no_possible_splits(data, features):
     for feature in features:
         if(len(np.unique(data[feature])) > 1):
@@ -108,3 +112,55 @@ def test(test_data, target, tree):
             num_correct += 1
 
     return num_correct
+
+
+def ID3(data, features, target):
+    if (no_possible_splits(data, features)):
+        node = Node(terminal=True)
+        vals, counts = np.unique(data[target], return_counts=True)
+        category_index = 0
+        for i in range(len(vals)):
+            if (counts[i] > counts[category_index]):
+                category_index = i
+        node.categorization = vals[category_index]
+        return node
+
+    if len(np.unique(data[target])) == 1:
+        node = Node(terminal=True)
+        node.categorization = np.unique(data[target])[0]
+        return node
+
+    root = find_split(data, features, target)
+
+    # grabs all rows where split feautre is below
+    left_data = data.where(data[root.feature] < root.value).dropna()
+
+    # grabs all rows where split feautre is above
+    right_data = data.where(data[root.feature] > root.value).dropna()
+
+    root.left = ID3(left_data, features, target)
+    root.right = ID3(right_data, features, target)
+
+    return root
+
+
+def main():
+    train_path = (sys.argv[1])
+    train = pd.read_csv(train_path, sep=" ",
+                       header=None)
+    features = train.columns[:-1]
+    target = train.columns[-1:]
+
+    test_path = (sys.argv[2])
+    test_data = pd.read_csv(test_path, sep=" ",
+                       header=None)
+
+    tree = ID3(train, features, target)
+
+    results = test(test_data, target, tree)
+    print(results)
+
+
+if __name__ == '__main__':
+    main()
+

@@ -4,10 +4,10 @@ N=$1
 shift
 
 ## Grab data from standard input
-cat | shuf > temp.$$.txt
+cat | gshuf > temp.$$.txt
 
 ## All but last N
-head -n -${N} temp.$$.txt > temp.$$.train.txt
+ghead -n -${N} temp.$$.txt > temp.$$.train.txt
 
 ## Only last N
 tail -n ${N} temp.$$.txt > temp.$$.test.txt
