@@ -11,6 +11,10 @@ A link to the original data set, with additional information can be found [here]
 #### cancer.txt
 A link to the original data set, with additional information can be found [here](https://archive.ics.uci.edu/ml/datasets/Breast+Tissue)
 
+The project used both of these datasets to build an id3 decision tree for each and then test them by running each different test size (n) 100 times (each outputting the number of correct classificitons). 
+
+Iris: n=[1,5,10,25,50,75,100,125,140,145,149] 1100 runs total
+Cancer: n=[1,5,10,25,50,75,90,100,104] 900 runs total
 
 ## To run the project
 To run the project you must use the split.bash file (a utility file to shuffle, split into test/train sets, and run the final script)
@@ -26,8 +30,7 @@ then while running split.bash make sure to specify the amount of examples you'd 
 ## The files
 
 ### id3.py
-id3.py will use the data to build an id3 decision tree and then use the test set to make predicitons. The program outputs the number of 
-examples that it classified correctly. 
+id3.py will use the data to build an id3 decision tree and then use the test set to make predicitons. The program outputs the number of examples that it classified correctly. 
 
 ### tree.py
 a simple utility file to help id3.py do its job
