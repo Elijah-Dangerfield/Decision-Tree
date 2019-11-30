@@ -12,7 +12,7 @@ A link to the original data set, with additional information can be found [here]
 A link to the original data set, with additional information can be found [here](https://archive.ics.uci.edu/ml/datasets/Breast+Tissue)
 
 
-### To run the project
+## To run the project
 To run the project you must use the split.bash file (a utility file to shuffle, split into test/train sets, and run the final script)
 That being said make sure that split.bash is executable by running (while in project directory)  
 
