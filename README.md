@@ -23,6 +23,29 @@ then while running split.bash make sure to specify the amount of examples you'd 
 ``` ./split.bash <size of test set> "python3 id3.py" ```
 
 
-## id3.py
+## The files
+
+### id3.py
 id3.py will use the data to build an id3 decision tree and then use the test set to make predicitons. The program outputs the number of 
 examples that it classified correctly. 
+
+### tree.py
+a simple utility file to help id3.py do its job
+
+### report.pdf
+a full breakdown of the work down in this project
+
+### split.bash
+(Created by Joshua Phillips)
+A bash script used to run the project. It takes a specified datastet.txt file, shuffles it, split it into a test.txt file and a train.txt file and uses them as input to a specified command (in our case, id3.py)
+
+### iris_results.txt & cancer_results.txt & plots.ipynb
+ iris_results.txt & cancer_results.txt are the reuslts from running the project with the differing test/train splits. Each column represents the split with each value being the number of correct classifications. 
+ 
+plots.ipynb uses the iris_results.txt & cancer_results.txt to generate these plots: 
+!()[https://firebasestorage.googleapis.com/v0/b/github-images.appspot.com/o/Screen%20Shot%202019-11-29%20at%2018.21.41.png?alt=media&token=ee5a43f9-1c3e-468b-9685-19292a263b11]
+
+
+
+
+
