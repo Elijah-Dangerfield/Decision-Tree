@@ -43,7 +43,7 @@ A bash script used to run the project. It takes a specified datastet.txt file, s
  iris_results.txt & cancer_results.txt are the reuslts from running the project with the differing test/train splits. Each column represents the split with each value being the number of correct classifications. 
  
 plots.ipynb uses the iris_results.txt & cancer_results.txt to generate these plots: 
-!()[https://firebasestorage.googleapis.com/v0/b/github-images.appspot.com/o/Screen%20Shot%202019-11-29%20at%2018.21.41.png?alt=media&token=ee5a43f9-1c3e-468b-9685-19292a263b11]
+![](https://firebasestorage.googleapis.com/v0/b/github-images.appspot.com/o/Screen%20Shot%202019-11-29%20at%2018.21.41.png?alt=media&token=ee5a43f9-1c3e-468b-9685-19292a263b11)
 
 
 
