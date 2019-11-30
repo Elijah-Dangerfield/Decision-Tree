@@ -5,10 +5,10 @@ the basics of decision trees, information theory for calculating entropy, and pr
 
 In this project I built a decision tree that uses entropy of data for node/attribute selection. There were two continous value datasets used in this project
 
-iris.txt
+#### iris.txt
 A link to the original data set, with additional information can be found [here](https://archive.ics.uci.edu/ml/datasets/Iris)
 
-cancer.txt
+#### cancer.txt
 A link to the original data set, with additional information can be found [here](https://archive.ics.uci.edu/ml/datasets/Breast+Tissue)
 
 
